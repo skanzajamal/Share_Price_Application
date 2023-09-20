@@ -13,20 +13,37 @@ This is a simple desktop application using the stock API for real world Stock Ma
 
 - Front-end: AngularJS, HTML, CSS, Bootstrap
 - Back-end: SpringBoot (JAVA)
-- Database: PostgreSQL 
+- Database: PostgreSQL
+- Apache Kafka
 
 # Build Instructions
 
-- Install Intellij Idea
+- Install IntelliJ Idea
 
 - Install JDK 11
 
-- run mvn clean install to install the package into the local repository
+to install kafka visit https://kafka.apache.org/downloads
+and download kafka from binary downloads, verion 3.5.1
 
-- press run or debug to start the application
+open terminal in kafka folder and run the following command:
 
-- the application will start on port 8088 and url http://localhost:/8088
+$ .\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
 
-- for api docs: open in browser http://localhost:8088/swagger-ui/
+open a new terminal in the same kafka folder and run the following command:
 
-- to generate the binary run mvn clean deploy
+$ .\bin\windows\kafka-server-start.bat .\config\server.properties
+
+in your IDE press debug or run button, then the application will start on port 8088
+
+for api docs: open in browser http://localhost:8088/swagger-ui/
+
+to generate the binary run mvn clean deploy
+
+
+# Viewing messages in Kafka
+
+use the Kafka-console-consumer to view your messages.
+
+open a new terminal in the same kafka folder and run the following command to get all messages in a topic from the beginning.
+
+$ .\bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic employee --from-beginning
