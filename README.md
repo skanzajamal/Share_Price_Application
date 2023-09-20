@@ -5,9 +5,9 @@ This is a simple desktop application using the stock API for real world Stock Ma
 # Application Features:
 
 - The application is configurable which share prices are to be retrieved.
-- Action performed pushed in Kafka message broker
-- Communication between Front-end and Back-end through REST-API
-- Access to the REST controller secured via OAuth2 (as an OAuth2 provider it authenticates through Github)
+- Action performed pushed in Kafka message broker.
+- Communication between Front-end and Back-end through REST-API.
+- Access to the REST controller secured via OAuth2 (as an OAuth2 provider it authenticates through Github).
 
 # Technologies:
 
@@ -46,4 +46,4 @@ use the Kafka-console-consumer to view your messages.
 
 open a new terminal in the same kafka folder and run the following command to get all messages in a topic from the beginning.
 
-$ .\bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic employee --from-beginning
+$ .\bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic stock --from-beginning
