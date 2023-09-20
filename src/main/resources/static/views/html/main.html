@@ -1,0 +1,17 @@
+<div class="container-fluid" style="background: gainsboro" ng-controller="SharedPriceCtrl" data-ng-init=getAllList()">
+    <div class="jumbotron" style="background: #3c3c3c;%">
+
+        <a href="/" style="color: white">< Go back</a>
+
+        <div class="form-group filled col-md-3">
+            <div class="col-sm-3">
+                <label>From</label><br>
+
+                <select name="symbol" ng-model="symbol" style="width: 100%">
+                    <option value="">Select Symbol</option>
+                    <option ng-repeat="option in sharedPriceList">{{option}}</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>

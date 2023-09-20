@@ -1,0 +1,40 @@
+<div class="container-fluid" style="background: gainsboro" ng-controller="SharedPriceCtrl">
+    <div class="jumbotron" style="background: #3c3c3c1c;%">
+
+        <div style="margin-bottom: 2%">
+            <a href="/" style="color: black">< Go back</a>
+        </div>
+
+            <div class="col-sm-3" style="margin-bottom: 5%">
+                <label>Symbol</label><br>
+
+                <select name="symbol" ng-model="symbol" style="width: 100%">
+                    <option value="">Select Symbol</option>
+                    <option ng-repeat="option in sharedPriceList">{{option}}</option>
+                </select>
+
+                <div style="margin-top: 2%">
+                    <button type="button" class="btn btn-primary"
+                            style="background-color: #F73E3E; font-weight: bold"
+                            ng-click="getApi()">Save
+                    </button>
+                </div>
+            </div>
+
+        <div class="container-fluid container-fullw bg-white">
+            <div class="row">
+                <div class="col-md-12" data-ng-init="getPriceList()">
+                    <div class="invoice">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div ui-grid="priceGridOptions" ui-grid-pagination ui-grid-move-columns
+                                     class="grid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
