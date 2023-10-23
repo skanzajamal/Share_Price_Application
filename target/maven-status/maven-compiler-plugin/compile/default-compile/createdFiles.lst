@@ -10,6 +10,7 @@ com\kafka\config\KafKaConsumer.class
 com\repository\FilterRepository.class
 com\constants\AppConstants.class
 com\SharedPriceApplication.class
+com\config\GitHubConfig.class
 com\model\FilterTable.class
 com\dto\SharedPriceDto.class
 com\kafka\config\KafkaProducer.class
