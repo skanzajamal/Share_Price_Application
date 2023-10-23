@@ -35,7 +35,7 @@ $ .\bin\windows\kafka-server-start.bat .\config\server.properties
 
 in your IDE press debug or run button, then the application will start on port 8088
 
-for api docs: open in browser http://localhost:8088/swagger-ui/
+open in browser http://localhost:8088
 
 to generate the binary run mvn clean deploy
 
