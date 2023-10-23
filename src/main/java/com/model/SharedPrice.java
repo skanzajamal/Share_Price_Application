@@ -13,24 +13,24 @@ public class SharedPrice {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    int id;
+    private int id;
 
     @Column(name = "symbol")
-    String symbol;
+    private String symbol;
 
     @Column(name = "name")
-    String name;
+    private String name;
 
     @Column(name = "price")
-    Double price;
+    private Double price;
 
     @Column(name = "exchange")
-    String exchange;
+    private String exchange;
 
     @Column(name = "exchange_short_name")
-    String exchangeShortName;
+    private String exchangeShortName;
 
     @Column(name = "type")
-    String type;
+    private String type;
 
 } //ENDCLASS

@@ -13,9 +13,9 @@ public class FilterTable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    int id;
+    private int id;
 
     @Column(name = "symbol")
-    String symbol;
+    private String symbol;
 
 } //ENDCLASS
