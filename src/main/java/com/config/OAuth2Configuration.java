@@ -18,7 +18,7 @@ public class OAuth2Configuration extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .authorizeRequests(a->a
-                .antMatchers("/**","/login**", "/h2","/list","/error","/webjars/**").permitAll()
+                .antMatchers("/**","/login**", "/h2-console","/list","/error","/webjars/**").permitAll()
                 .anyRequest().authenticated()
                 )
                 .logout(l->l

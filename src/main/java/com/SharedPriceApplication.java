@@ -34,7 +34,7 @@ public class SharedPriceApplication {
                 "Shared Price API",
                 "Application in JAVA",
                 "1.0",
-                "Free to use",
+                 "Free to use",
                 new springfox.documentation.service.Contact("Kanza Jamal", "https://github.com/skanzajamal", "k122060@nu.ed.pk"),
                 "API License",
                 "https://github.com/skanzajamal",

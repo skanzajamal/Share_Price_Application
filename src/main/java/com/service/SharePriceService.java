@@ -1,6 +1,7 @@
 package com.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.kafka.config.KafkaProducer;
 import com.model.FilterTable;
 import com.model.SharedPrice;
 import com.repository.FilterRepository;
@@ -22,6 +23,11 @@ public class SharePriceService {
     @Autowired
     public FilterRepository filterRepository;
 
+    private final KafkaProducer kafkaProducer;
+
+    public SharePriceService(KafkaProducer kafkaProducer) {
+        this.kafkaProducer = kafkaProducer;
+    }
 
     public SharedPrice insert(SharedPrice sharedPrice) {
 
@@ -51,6 +57,7 @@ public class SharePriceService {
                     sharedPriceDto.setExchangeShortName(sharedPrice.getExchangeShortName());
                     sharedPriceDto.setType(sharedPrice.getType());
                     sharedPriceRepository.save(sharedPriceDto);
+                    kafkaProducer.sendMessage("retrieved stock price of " + sharedPrice.getSymbol());
                 }
             }
         }
