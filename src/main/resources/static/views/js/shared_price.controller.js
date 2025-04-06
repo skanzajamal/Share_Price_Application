@@ -1,4 +1,4 @@
-sharedPriceApp.controller('SharedPriceCtrl', ['$scope', '$window', '$filter', 'SharedPriceService', function ($scope, $window, $filter, SharedPriceService) {
+sharedPriceApp.controller('SharedPriceCtrl', ['$scope', '$filter', 'SharedPriceService', function ($scope, $filter, SharedPriceService) {
 
     $scope.apiList = [];
     $scope.List = [];
@@ -107,11 +107,8 @@ sharedPriceApp.controller('SharedPriceCtrl', ['$scope', '$window', '$filter', 'S
 
     $scope.delete = function (row) {
         SharedPriceService.delete(row.id).then(function (result) {
+            $scope.getPriceList();
         });
-    };
-
-    $scope.reloadPage = function() {
-        $window.location.reload();
     };
 
     $scope.getApi = function () {
@@ -123,7 +120,7 @@ sharedPriceApp.controller('SharedPriceCtrl', ['$scope', '$window', '$filter', 'S
                 if(result.data[i].symbol === $scope.symbol){
                     priceData = result.data[i];
                     SharedPriceService.savePrice(priceData).then(function (result) {
-
+                        $scope.getPriceList();
                     })
                 }
             }
