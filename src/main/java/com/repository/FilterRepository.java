@@ -5,6 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface FilterRepository extends JpaRepository<FilterTable, Long> {
+public interface FilterRepository extends JpaRepository<FilterTable, Integer> {
 
 } //ENDINTERFACE

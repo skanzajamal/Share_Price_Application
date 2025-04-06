@@ -56,7 +56,6 @@ public class SharePriceService {
                     sharedPriceDto.setExchange(sharedPrice.getExchange());
                     sharedPriceDto.setExchangeShortName(sharedPrice.getExchangeShortName());
                     sharedPriceDto.setType(sharedPrice.getType());
-                    sharedPriceRepository.save(sharedPriceDto);
                     kafkaProducer.sendMessage("retrieved stock price of " + sharedPrice.getSymbol());
                 }
             }
@@ -66,6 +65,14 @@ public class SharePriceService {
 
     public List<SharedPrice> getAllRecord() {
         return sharedPriceRepository.findAll();
+    }
+
+    public void delete(Integer id) {
+        sharedPriceRepository.deleteById(id);
+    }
+
+    public void deleteAll(){
+        sharedPriceRepository.deleteAll();
     }
 
 } //ENDCLASS

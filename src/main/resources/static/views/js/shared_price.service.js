@@ -35,5 +35,15 @@ sharedPriceApp.service('SharedPriceService', ['$http', function ($http) {
             });
     };
 
+    this.delete = function (id) {
+        return $http.delete("/stockPrices/delete/" + id)
+            .then(function (data) {
+                return data;
+            })
+            .catch(function (e) {
+                return e;
+            });
+    }
+
 }]);
 

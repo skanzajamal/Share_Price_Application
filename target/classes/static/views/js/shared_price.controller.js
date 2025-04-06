@@ -1,4 +1,4 @@
-sharedPriceApp.controller('SharedPriceCtrl', ['$scope', '$filter', 'SharedPriceService', function ($scope, $filter, SharedPriceService) {
+sharedPriceApp.controller('SharedPriceCtrl', ['$scope', '$window', '$filter', 'SharedPriceService', function ($scope, $window, $filter, SharedPriceService) {
 
     $scope.apiList = [];
     $scope.List = [];
@@ -95,8 +95,24 @@ sharedPriceApp.controller('SharedPriceCtrl', ['$scope', '$filter', 'SharedPriceS
             {name: 'price', displayName: 'Price', headerCellClass: $scope.highlightFilteredHeader},
             {name: 'exchange', displayName: 'Exchange', headerCellClass: $scope.highlightFilteredHeader},
             {name: 'exchangeShortName', displayName: 'Exchange Short Name', headerCellClass: $scope.highlightFilteredHeader},
-            {name: 'type', displayName: 'Type', headerCellClass: $scope.highlightFilteredHeader}
+            {name: 'type', displayName: 'Type', headerCellClass: $scope.highlightFilteredHeader},
+            {
+                name: 'action',
+                displayName: 'Action',
+                cellTemplate: '<button class="btn btn-danger" ng-click="grid.appScope.delete(row.entity)"><i class="glyphicon glyphicon-trash"></i></button>',
+                width: 120
+            }
         ]
+    };
+
+    $scope.delete = function (row) {
+        SharedPriceService.delete(row.id).then(function (result) {
+            this.reloadPage();
+        });
+    };
+
+    $scope.reloadPage = function() {
+        $window.location.reload();
     };
 
     $scope.getApi = function () {
@@ -104,9 +120,9 @@ sharedPriceApp.controller('SharedPriceCtrl', ['$scope', '$filter', 'SharedPriceS
             $scope.apiList = result.data;
 
             for(var i=0; i< result.data.length; i++){
+
                 if(result.data[i].symbol === $scope.symbol){
                     priceData = result.data[i];
-
                     SharedPriceService.savePrice(priceData).then(function (result) {
                     })
                 }

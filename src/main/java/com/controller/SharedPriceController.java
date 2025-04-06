@@ -42,4 +42,9 @@ public class SharedPriceController {
         return new ResponseEntity<List<SharedPrice>>(sharedPrices, HttpStatus.OK);
     }
 
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public void delete(@PathVariable("id") Integer id){
+        sharePriceService.delete(id);
+    }
+
 } //ENDCLASS
