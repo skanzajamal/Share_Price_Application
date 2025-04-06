@@ -107,7 +107,6 @@ sharedPriceApp.controller('SharedPriceCtrl', ['$scope', '$window', '$filter', 'S
 
     $scope.delete = function (row) {
         SharedPriceService.delete(row.id).then(function (result) {
-
         });
     };
 
@@ -124,6 +123,7 @@ sharedPriceApp.controller('SharedPriceCtrl', ['$scope', '$window', '$filter', 'S
                 if(result.data[i].symbol === $scope.symbol){
                     priceData = result.data[i];
                     SharedPriceService.savePrice(priceData).then(function (result) {
+
                     })
                 }
             }
