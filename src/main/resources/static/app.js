@@ -7,6 +7,10 @@
                 templateUrl: "views/html/sharedPrice.html",
                 controller: "SharedPriceCtrl"
             })
+            .when("/", {
+                templateUrl: "views/html/main.html",
+                controller: "SharedPriceCtrl"
+            })
 
         if(window.history && window.history.pushState) {
 

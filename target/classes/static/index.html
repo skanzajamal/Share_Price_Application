@@ -47,31 +47,32 @@
     Logged in as: <span id="user"></span>
 </div>
 
-<div class="container-fluid" style="background: gainsboro" ng-controller="SharedPriceCtrl">
-    <div class="jumbotron" style="background: #3c3c3c1c;%">
+<!--<div class="container-fluid" style="background: gainsboro" ng-controller="SharedPriceCtrl">-->
+<!--    <div class="jumbotron" style="background: #3c3c3c1c;%">-->
 
-        <div class="col-sm-3" style="margin-bottom: 5%">
-            <label>Symbol</label><br>
+<!--        <div class="col-sm-3" style="margin-bottom: 5%">-->
+<!--            <label>Symbol</label><br>-->
 
-            <select name="symbol" ng-model="symbol" style="width: 100%">
-                <option value="">Select Symbol</option>
-                <option ng-repeat="option in sharedPriceList">{{option}}</option>
-            </select>
+<!--            <select name="symbol" ng-model="symbol" style="width: 100%">-->
+<!--                <option value="">Select Symbol</option>-->
+<!--                <option ng-repeat="option in sharedPriceList">{{option}}</option>-->
+<!--            </select>-->
 
-            <div style="margin-top: 2%">
-                <button type="button" class="btn btn-primary"
-                        style="background-color: #F73E3E; font-weight: bold"
-                        ng-click="getApi()">Save
-                </button>
-            </div>
-        </div>
+<!--            <div style="margin-top: 2%">-->
+<!--                <button type="button" class="btn btn-primary"-->
+<!--                        style="background-color: #F73E3E; font-weight: bold"-->
+<!--                        ng-click="getApi()">Save-->
+<!--                </button>-->
+<!--            </div>-->
+<!--        </div>-->
 
-    </div>
-</div>
+<!--    </div>-->
+<!--</div>-->
 
 <!--     <div>-->
 <!--        <button onClick="logout()" class="btn btn-primary">Logout</button>-->
 <!--    </div>-->
+
 
 <script type="text/javascript">
     $.get("/user", function(data) {
