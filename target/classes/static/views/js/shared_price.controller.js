@@ -120,9 +120,8 @@ sharedPriceApp.controller('SharedPriceCtrl', ['$scope', '$filter', 'SharedPriceS
                 if(result.data[i].symbol === $scope.symbol){
                     priceData = result.data[i];
                     SharedPriceService.savePrice(priceData).then(function () {
-                        SharedPriceService.getSharedPriceList().then(function (result) {
-                            $scope.List = result.data;
-                            $scope.priceGridOptions.data = result.data;
+                        SharedPriceService.getSharedPriceList().then(function () {
+
                         });
                     })
                 }
