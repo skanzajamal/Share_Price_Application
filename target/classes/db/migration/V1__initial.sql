@@ -17,3 +17,5 @@ INSERT INTO filter (id, symbol) VALUES (1, 'SPY');
 INSERT INTO filter (id, symbol) VALUES (2, 'CMCSA');
 INSERT INTO filter (id, symbol) VALUES (3, 'KMI');
 INSERT INTO filter (id, symbol) VALUES (4, 'FG');
+
+ALTER TABLE stock ADD CONSTRAINT UC_Symbol UNIQUE(symbol);
